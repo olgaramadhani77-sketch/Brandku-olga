@@ -13,9 +13,9 @@
 
   <!-- Navbar -->
   <header class="bg-white shadow-sm">
-    <div class="max-w-6xl mx-auto text-center flex flex-col justify-center h-[300px]">
+    <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
 
-      <h1 class="text-blue-600 font-medium text-xl">
+      <h1 class="text-blue-600 font-bold text-xl">
         BrandKu
       </h1>
 
@@ -46,8 +46,10 @@
       Platform all-in-one untuk manajemen, pemasaran,
       dan pertumbuhan bisnis kecil.
     </p>
-
-    <button class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700">
+ 
+    <button 
+    id="btnmulai"
+    class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700">
       Mulai Gratis
     </button>
 
@@ -102,6 +104,31 @@
   <footer class="bg-slate-900 text-white text-center py-4">
     © 2025 BrandKu. All Rights Reserved.
   </footer>
+
+  <script>
+const btnMulaiGratis =document.querySelector('#btnmulai');
+const txtUnderBtn = document.querySelector('#btnmulai')
+
+let counter = 0;
+
+btnMulaiGratis.addEventListener('click',() =>{
+  counter++;
+  //TODO Action
+  //kalau mau di rubah jadi dari 0 tanpa rubah kode dan nambah -1
+
+  if (counter === 1 ){
+    console.log('clicked');
+    txtUnderBtn.textContent = 'Mulai Gratis'
+  }else if (counter === 2){
+    console.log ('change text color');
+    txtUnderBtn.classList.add('text-red-500')
+  }else if (counter === 3){
+    console.log ('off');
+    btnMulaiGratis.classList.add('hidden');
+    txtUnderBtn.classList.add('hidden');
+  }
+});
+  </script>
 
 </body>
 </html>
